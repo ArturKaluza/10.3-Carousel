@@ -10,16 +10,69 @@
     width: 400px;
     height: 300px;
     overflow: hidden;
+    position: relative;
  }
+/* arrow */
+#arrowLeft {
+    width: 0;
+    height: 0;
+    border-top: 15px solid transparent;
+	border-bottom: 15px solid transparent;
+	border-right: 20px solid #ccc;
+    position: absolute;
+    top: 140px;
+    left: 10px;
+    
+}
 
+#arrowRight {
+    width: 0;
+    height: 0;
+    border-top: 15px solid transparent;
+    border-bottom: 15px solid transparent;
+    border-left: 20px solid #ccc;
+    position: absolute;
+    top: 140px;
+    left: 370px;
+}
+
+/* circkle */
+.circkle {
+    position: absolute;
+    top: 260px;
+    left: 67px;
+}
+
+[class*="circkle-"] {
+    display: inline-block;
+    margin: 0 20px;
+    width: 10px;
+    height: 10px;
+    background: #ccc;
+    border-radius: 50%;
+}
+
+.active {
+    width: 20px;
+    height: 20px;
+    margin: 0 15px;
+}
+
+
+
+
+/* carousel */
 #carousel ul {
     width: 2000px;
+  /*  transform: translateX(-400px;) */
+   
 }
 
 #carousel ul li {
     list-style-type: none;
     width: 400px;
     float: left;
+    z-index: 1;
 }
 
 img {

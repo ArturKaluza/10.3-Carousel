@@ -1,5 +1,5 @@
 $(function() {
-    // elements
+    
     var carouselList = $('#carousel ul');
     
     var arrowLeft = $('#arrowLeft');
@@ -13,30 +13,35 @@ $(function() {
    // carouselList.css({'marginLeft':-400});
     
     circkle1.click(function(){
+        sortLiElements();
         carouselList.css('marginLeft',0);
         removeActive();
         $(this).addClass('active');
     })
     
     circkle2.click(function(){
+        sortLiElements();
         carouselList.css('marginLeft',-400);
         removeActive();
         $(this).addClass('active');
     })
     
     circkle3.click(function(){
+        sortLiElements();
         carouselList.css('marginLeft',-800);
         removeActive();
         $(this).addClass('active');
     })
     
     circkle4.click(function(){
+        sortLiElements();
         carouselList.css('marginLeft',-1200);
         removeActive();
         $(this).addClass('active');
     })
     
     circkle5.click(function(){
+        sortLiElements();
         carouselList.css('marginLeft',-1600);
         removeActive();
         $(this).addClass('active');
@@ -72,7 +77,21 @@ $(function() {
         } 
         
     }
-    
+        
+    function sortLiElements() {
+        var carouselLi = $('#carousel ul li');
+                        
+        for(var i = 0; i<carouselLi.length; i++) {
+            
+            var firstItem = carouselList.find("li:first");
+            var lastItem = carouselList.find("li:last");
+            
+            if(!(firstItem.hasClass('1'))) {
+                lastItem.after(firstItem);
+            } 
+        }
+    }
+        
     function moveFirstSlide() {
         var firstItem = carouselList.find("li:first");
         var lastItem = carouselList.find("li:last");

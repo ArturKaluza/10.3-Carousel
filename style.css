@@ -64,20 +64,16 @@
 /* carousel */
 #carousel ul {
     width: 2000px;
-  /*  transform: translateX(-400px;) */
-   
 }
 
 #carousel ul li {
     list-style-type: none;
     width: 400px;
     float: left;
-    z-index: 1;
 }
 
 img {
     width: 400px;
     height: 300px;
     border: 3px solid black;
-    float: left;
 }

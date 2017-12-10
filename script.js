@@ -10,8 +10,7 @@ $(function() {
     var circkle3 = $('#carousel .circkle .circkle-3');
     var circkle4 = $('#carousel .circkle .circkle-4');
     var circkle5 = $('#carousel .circkle .circkle-5');
-   // carouselList.css({'marginLeft':-400});
-    
+        
     circkle1.click(function(){
         sortLiElements();
         carouselList.css('marginLeft',0);
@@ -95,6 +94,7 @@ $(function() {
     function moveFirstSlide() {
         var firstItem = carouselList.find("li:first");
         var lastItem = carouselList.find("li:last");
+        
         lastItem.after(firstItem);
         carouselList.css({marginLeft:0});
         chceckActive();
@@ -103,18 +103,19 @@ $(function() {
     function moveLastSlide() {
         var firstItem = carouselList.find("li:first");
         var lastItem = carouselList.find("li:last");
+       
         firstItem.before(lastItem);
-        carouselList.css({marginLeft:0});
+        carouselList.css({marginLeft:-400});
         chceckActive();
     }
     
-     
         arrowRight.click(function(){
             carouselList.animate({'marginLeft':-400}, 500, moveFirstSlide);
         })    
     
         arrowLeft.click(function() {
-            carouselList.animate({'marginLeft':400}, 500, moveLastSlide);
+            moveLastSlide();
+            carouselList.animate({'marginLeft':0}, 500);
         })
     
         function changeSlide() {
